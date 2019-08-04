@@ -13,7 +13,7 @@ const privateRoutes: Routes = [
     canDeactivate: [CanDeactivatePrivateGuardService],
     children: [
       {
-        path: '', component: InsumoComponent
+        path: 'insumo', component: InsumoComponent
       }
     ]
   }
