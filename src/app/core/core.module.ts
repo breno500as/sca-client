@@ -5,6 +5,8 @@ import { AuthMineradoraGuardService } from './services/auth-mineradora/auth-mine
 import { AuthInterceptor } from './services/http-interceptors/auth-interceptor';
 import { LoginService } from './services/login.service';
 import { AuthMineradoraService } from './services/auth-mineradora/auth-mineradora.service';
+import { ActivatePublicGuardService } from './services/auth-mineradora/activate-public-guard.service';
+import { DeactivatePrivateGuardService } from './services/auth-mineradora/deactivate-private.service';
 
 @NgModule({
   declarations: [],
@@ -25,6 +27,8 @@ export class CoreModule {
       providers: [
         AuthMineradoraGuardService,
         AuthMineradoraService,
+        DeactivatePrivateGuardService,
+        ActivatePublicGuardService,
         LoginService,
         { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
       ]
