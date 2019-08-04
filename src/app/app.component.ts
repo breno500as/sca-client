@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Spinkit } from 'ng-http-loader';
- 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +10,9 @@ import { Spinkit } from 'ng-http-loader';
 export class AppComponent {
   title = 'sca-client';
   public spinkit = Spinkit;
+
+  constructor(public router: Router) {
+
+  }
+
 }

@@ -25,7 +25,8 @@
     "core-js": "^2.5.4",
     "ng-http-loader": "^5.1.0",
     "ngx-bootstrap": "^5.1.0",
-    "ngx-webstorage": "^4.0.1",
+    "ngx-toastr": "^10.0.4",
+    "ngx-webstorage": "^3.0.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"

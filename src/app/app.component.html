@@ -5,14 +5,30 @@
 [extraDuration]="300"
 [minDuration]="300"
 [opacity]=".6"
-[spinner]="spinkit.skWave"
->
-    
+[spinner]="spinkit.skWave">
 </ng-http-loader>
 
 <ng-progress></ng-progress>
 
-<div [class]="!gerandoPdf ? 'margin-app' : ''">
+
+<div class="container">
+
+    <div style="margin-top: 150px;"  *ngIf="router.url === '/'">
+        <form class="form-signin">
+            <h1 class="h3 mt-4 pb-4 font-weight-normal text-center" >Sistema de Controle Ambiental</h1>
+            <label for="inputUser" class="sr-only">Endereço de email</label>
+            <input type="text" id="inputUser" class="form-control" placeholder="Usuário" required autofocus>
+            <label for="inputPassword" class="sr-only">Senha</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+            <div class="checkbox">
+                <label>
+                 <input type="checkbox" value="remember-me"> Lembrar de mim
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block mt-4 mb-3" type="submit">Login</button>
+        </form>
+    </div>
+    
  <router-outlet></router-outlet>
 </div>
 
