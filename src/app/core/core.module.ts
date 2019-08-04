@@ -1,8 +1,10 @@
 import { NgModule, Optional, SkipSelf, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ToastMessageErrorInterceptor } from './services/http-interceptors/toast-message-error-interceptor';
 import { AuthMineradoraGuardService } from './services/auth-mineradora/auth-mineradora-guard.service';
+import { AuthInterceptor } from './services/http-interceptors/auth-interceptor';
+import { LoginService } from './services/login.service';
+import { AuthMineradoraService } from './services/auth-mineradora/auth-mineradora.service';
 
 @NgModule({
   declarations: [],
@@ -22,7 +24,9 @@ export class CoreModule {
       ngModule: CoreModule,
       providers: [
         AuthMineradoraGuardService,
-        { provide: HTTP_INTERCEPTORS, useClass: ToastMessageErrorInterceptor, multi: true }
+        AuthMineradoraService,
+        LoginService,
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
       ]
     };
 }

@@ -8,6 +8,8 @@ import { NgProgressHttpModule } from '@ngx-progressbar/http';
 import { HttpClientModule } from '@angular/common/http';
 import { NgHttpLoaderModule } from 'ng-http-loader';
 import { NgxWebstorageModule } from 'ngx-webstorage';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -15,8 +17,9 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
-    CoreModule,
+    CoreModule.forRoot(),
     HttpClientModule,
     NgProgressModule,
     NgProgressHttpModule,

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SessionStorageService } from 'ngx-webstorage';
-import { UsuarioMineradora } from '../../../interfaces/usuarioMineradora';
+import { UsuarioMineradora } from '../../../classes/usuarioMineradora';
 
 
 @Injectable()

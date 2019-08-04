@@ -23,6 +23,7 @@
     "@ngx-progressbar/http": "^5.1.0",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
+    "md5-typescript": "^1.0.5",
     "ng-http-loader": "^5.1.0",
     "ngx-bootstrap": "^5.1.0",
     "ngx-toastr": "^10.0.4",
