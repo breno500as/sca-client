@@ -1,31 +1,38 @@
-<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" style="color: white;">MINERADORA</a>
+<div class="menu-normal">
+  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0 text-white">
+      MINERADORA
+    </a>
+    <ul class="navbar-nav px-3">
+      <li>
+        <a href="#" class="text-white" (click)="logout()">Sair</a>
+      </li>
+    </ul>
+  </nav>
+</div>
 
-  
- 
-  <!-- 
-  <app-private-menu [responsivo]="true"></app-private-menu>
-  -->
-  
-  
-  <ul class="navbar-nav px-3">
-    <li>
-      <a href="#" class="text-white" (click)="logout()">Sair</a>
-    </li>
-  </ul>
-</nav>
-
- 
+<div class="menu-responsivo">
+  <nav class="navbar navbar-dark bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0 text-white">
+      MINERADORA
+    </a>
+    <app-private-menu [responsivo]="true" style="flex-grow: 1;"></app-private-menu>
+  </nav>
+</div>
 
 <div class="container-fluid">
   <div class="row">
-    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-      <div class="sidebar-sticky">
-        <app-private-menu></app-private-menu> 
-      </div>
-  </nav>
 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 mt-5" style="position: fixed">
-        <router-outlet></router-outlet>
+    <div class="menu-normal">
+      <nav class="col-md-2 bg-light sidebar">
+        <div class="sidebar-sticky">
+          <app-private-menu></app-private-menu>
+        </div>
+      </nav>
+    </div>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 mt-5">
+      <router-outlet></router-outlet>
     </main>
-</div>
+    
+  </div>
