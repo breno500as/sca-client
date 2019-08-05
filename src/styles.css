@@ -18,6 +18,7 @@ html {
   .size-icon {
     width: 12px;
     height: 12px;
+    color: #999;
   }
   
   /*
@@ -56,14 +57,7 @@ html {
     font-size: 14px;
   }
   
-  .sidebar .nav-link .size-icon {
-    margin-right: 2px;
-    color: #999;
-  }
-  
-  .sidebar .nav-link.active {
-    color: #007bff;
-  }
+ 
   
   .sidebar .nav-link:hover .size-icon,
   .sidebar .nav-link.active .size-icon {
@@ -119,5 +113,16 @@ html {
 
   .main-item {
     cursor: pointer;
-    background-color: #D3D3D3;
+    background-color: #343a40; 
+    color: white;
   }
+
+  .text-white {
+   color: white;
+  }
+
+  .text-black {
+   color: black;
+  }
+
+   

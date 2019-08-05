@@ -1,100 +1,100 @@
 <ul class="nav flex-column">
     <li class="main-item" (click)="showCrudMenu = !showCrudMenu">
-     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-2 mb-1 text-muted">
-       <span>Cadastros</span>
-        <a class="d-flex align-items-center text-muted" href="#" >
+     <h6 class="d-flex justify-content-between align-items-center px-3 mt-2 mb-1">
+        <span>Cadastros</span>
+        <a class="d-flex align-items-center text-white" href="#" >
          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
         </a>
     </h6>
    </li>
   <ul class="nav flex-column mb-2" *ngIf="showCrudMenu" >
     <li class="nav-item">
-      <a class="nav-link" href="#" routerLink="insumo" >
+      <a class="nav-link" href="#" routerLink="insumo" [ngClass]="responsivo ? 'text-white' : 'text-black'" >
           <i-feather name="edit" class="size-icon"></i-feather>
-          <span> Insumo </span>
+           Insumo  
       </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#" routerLink="marca-modelo">
+        <a class="nav-link" href="#" routerLink="marca-modelo"  [ngClass]="responsivo ? 'text-white' : 'text-black'">
             <i-feather name="edit" class="size-icon"></i-feather>
-          Marca modelo
+             Marca modelo  
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#" routerLink="tipo-insumo"  >
+        <a class="nav-link" href="#" routerLink="tipo-insumo"   [ngClass]="responsivo ? 'text-white' : 'text-black'">
             <i-feather name="edit" class="size-icon"></i-feather>
-          Tipo Insumo
+             Tipo Insumo  
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#" routerLink="subtipo-insumo">
+        <a class="nav-link" href="#" routerLink="subtipo-insumo"  [ngClass]="responsivo ? 'text-white' : 'text-black'">
             <i-feather name="edit" class="size-icon"></i-feather>
-          Sub tipo insumo
+             Sub tipo insumo  
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#" routerLink="agenda-manutencao">
+        <a class="nav-link" href="#" routerLink="agenda-manutencao"  [ngClass]="responsivo ? 'text-white' : 'text-black'">
             <i-feather name="clock" class="size-icon"></i-feather>
-          Agendamento manutenção
+                Agendamento manutenção  
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#" routerLink="aquisicao-insumo">
+        <a class="nav-link" href="#" routerLink="aquisicao-insumo"  [ngClass]="responsivo ? 'text-white' : 'text-black'">
             <i-feather name="shopping-cart" class="size-icon"></i-feather>
-          Aquisição insumo
+             Aquisição insumo 
         </a>
     </li>
   </ul>
 
   <li class="main-item"  (click)="showBpmMenu = !showBpmMenu">
-    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-2 mb-1 text-muted">
-      <span>Atividades - BPM</span>
-      <a class="d-flex align-items-center text-muted" href="#">
+    <h6 class="d-flex justify-content-between align-items-center px-3 mt-2 mb-1">
+      <span>Atividades</span>
+      <a class="d-flex align-items-center text-white" href="#">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
       </a>
     </h6>
   </li>
   <ul class="nav flex-column mb-2" *ngIf="showBpmMenu">
       <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="estudo">
+          <a class="nav-link" href="#" routerLink="estudo"  [ngClass]="responsivo ? 'text-white' : 'text-black'">
               <i-feather name="clipboard" class="size-icon"></i-feather>
-            Estudos topográficos e geotécnicos
+               Estudos topográficos e geotécnicos  
           </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" routerLink="atv-perfuracao">
+        <a class="nav-link" href="#" routerLink="atv-perfuracao"  [ngClass]="responsivo ? 'text-white' : 'text-black'">
             <i-feather name="clipboard" class="size-icon"></i-feather>
-          Atividades perfuração
+               Atividades perfuração  
         </a>
       </li>
 
       <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="atv-transporte">
+          <a class="nav-link" href="#" routerLink="atv-transporte"  [ngClass]="responsivo ? 'text-white' : 'text-black'">
               <i-feather name="clipboard" class="size-icon"></i-feather>
-            Atividades transporte do minério
+               Atividades transporte do minério  
           </a>
       </li>
 
       <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="atv-preparacao">
+          <a class="nav-link" href="#" routerLink="atv-preparacao"  [ngClass]="responsivo ? 'text-white' : 'text-black'">
               <i-feather name="clipboard" class="size-icon"></i-feather>
-            Atividades preparação do minério
+               Atividades preparação do minério  
           </a>
       </li>
 
       <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="atv-ambiente">
+          <a class="nav-link" href="#" routerLink="atv-ambiente"  [ngClass]="responsivo ? 'text-white' : 'text-black'">
               <i-feather name="clipboard" class="size-icon"></i-feather>
-            Preservação do meio ambiente
+                Preservação do meio ambiente 
           </a>
       </li>
 
   </ul>
 
   <li class="main-item" (click)="showMonitorMenu = !showMonitorMenu">
-   <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-2 mb-1 text-muted" >
+   <h6 class="d-flex justify-content-between align-items-center px-3 mt-2 mb-1" >
       <span>Monitoramento</span>
-      <a class="d-flex align-items-center text-muted" href="#">
+      <a class="d-flex align-items-center text-white" href="#">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
       </a>
    </h6>
@@ -102,50 +102,50 @@
 
   <ul class="nav flex-column mb-2" *ngIf="showMonitorMenu">
       <li class="nav-item">
-        <a class="nav-link" href="#" routerLink="alerta-barragem">
+        <a class="nav-link" href="#" routerLink="alerta-barragem"  [ngClass]="responsivo ? 'text-white' : 'text-black'">
             <i-feather name="activity" class="size-icon"></i-feather>
-           Alerta situação barragem
+              Alerta situação barragem 
         </a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="#"  routerLink="dados-monitoramento">
+          <a class="nav-link" href="#"  routerLink="dados-monitoramento"  [ngClass]="responsivo ? 'text-white' : 'text-black'">
               <i-feather name="activity" class="size-icon"></i-feather>
-             Gráfico dados monitoramento
+               Gráfico dados monitoramento  
           </a>
         </li>
   </ul>
 
   <li class="main-item"  (click)="showRelatorioMenu = !showRelatorioMenu">
-    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-2 mb-1 text-muted">
+    <h6 class="d-flex justify-content-between align-items-center px-3 mt-2 mb-1">
       <span>Relatórios</span>
-      <a class="d-flex align-items-center text-muted" href="#">
+      <a class="d-flex align-items-center text-white" href="#">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
       </a>
     </h6>
   </li>
   <ul class="nav flex-column mb-2" *ngIf="showRelatorioMenu">
       <li class="nav-item">
-        <a class="nav-link" href="#" routerLink="rel-atv-operador">
+        <a class="nav-link" href="#" routerLink="rel-atv-operador"  [ngClass]="responsivo ? 'text-white' : 'text-black'">
             <i-feather name="file-text" class="size-icon"></i-feather>
-           Atvidades por operador
+            Atvidades por operador  
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"  routerLink="rel-atv-alerta">
+        <a class="nav-link" href="#"  routerLink="rel-atv-alerta"  [ngClass]="responsivo ? 'text-white' : 'text-black'">
             <i-feather name="file-text" class="size-icon"></i-feather>
-          Alertas críticos 
+              Alertas críticos   
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" routerLink="rel-insumo-manutencao">
+        <a class="nav-link" href="#" routerLink="rel-insumo-manutencao"  [ngClass]="responsivo ? 'text-white' : 'text-black'">
             <i-feather name="file-text" class="size-icon"></i-feather>
-          Manutenções  por insumo
+              Manutenções  por insumo 
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" routerLink="rel-insumo-aquisicao">
+        <a class="nav-link" href="#" routerLink="rel-insumo-aquisicao"  [ngClass]="responsivo ? 'text-white' : 'text-black'">
             <i-feather name="file-text" class="size-icon"></i-feather>
-          Aquisições insumo
+               Aquisições insumo  
         </a>
       </li>
 
