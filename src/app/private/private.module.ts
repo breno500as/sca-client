@@ -1,18 +1,31 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home/home.component';
-import { CanDeactivatePrivateGuardService } from './services/can-deactivate-mineradora-guard.service';
-import { PrivateRoutingModule } from './private.routing.module';
+import { NgModule } from '@angular/core';
+import { FeatherModule } from 'angular-feather';
+import { Edit, Activity, Clipboard, Clock, FileText, ShoppingCart } from 'angular-feather/icons';
 import { InsumoComponent } from './crud/insumo/insumo.component';
+import { HomeComponent } from './home/home.component';
+import { PrivateRoutingModule } from './private.routing';
+import { CanDeactivatePrivateGuardService } from './services/can-deactivate-private-guard.service';
+import { TodoComponent } from './todo/todo.component';
+import { MenuComponent } from './home/menu/menu.component';
+
+
+const icons = {
+  Edit, Activity, Clipboard, Clock, FileText, ShoppingCart
+};
+
 
 @NgModule({
   declarations: [
     HomeComponent,
     InsumoComponent,
+    TodoComponent,
+    MenuComponent,
   ],
   imports: [
     CommonModule,
-    PrivateRoutingModule
+    PrivateRoutingModule,
+    FeatherModule.pick(icons)
   ], providers: [
     CanDeactivatePrivateGuardService
   ]

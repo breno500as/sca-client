@@ -1,3 +1,22 @@
-<p>
-  home works!
-</p>
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" style="color: white;">Mineradora</a>
+
+  <ul class="navbar-nav px-3">
+    <li>
+      <a href="#" style="color: white;" (click)="logout()">Sair</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+         <app-private-menu></app-private-menu>
+      </div>
+  </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 mt-5" style="position: fixed">
+        <router-outlet></router-outlet>
+    </main>
+</div>

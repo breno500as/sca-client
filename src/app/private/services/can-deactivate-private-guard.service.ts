@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanDeactivate, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
+import { AuthMineradoraService } from 'src/app/core/services/auth-mineradora/auth-mineradora.service';
 
 
 export interface CanComponentDeactivate {
@@ -9,14 +10,19 @@ export interface CanComponentDeactivate {
 
 @Injectable()
 export class CanDeactivatePrivateGuardService implements CanDeactivate<CanComponentDeactivate> {
+
+  constructor(private authService: AuthMineradoraService) {
+
+  }
+
   canDeactivate(
     component: CanComponentDeactivate,
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState: RouterStateSnapshot
   ): Observable<boolean>|Promise<boolean>|boolean {
-    // evita que o usuário logado acesse páginas publicas
-    if (nextState.url.includes('/')) {
+
+    if (this.authService.hasUser() && nextState.url.includes('/')) {
       return false;
     }
     return true;

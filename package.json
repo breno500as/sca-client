@@ -21,6 +21,7 @@
     "@angular/router": "~7.2.0",
     "@ngx-progressbar/core": "^5.1.0",
     "@ngx-progressbar/http": "^5.1.0",
+    "angular-feather": "^6.0.2",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
     "md5-typescript": "^1.0.5",

@@ -1,25 +1,28 @@
 import { Injectable } from '@angular/core';
-import { SessionStorageService } from 'ngx-webstorage';
+import { LocalStorageService } from 'ngx-webstorage';
 import { UsuarioMineradora } from '../../../classes/usuarioMineradora';
 
 
 @Injectable()
 export class AuthMineradoraService {
 
-  private currentUser: UsuarioMineradora;
 
-  constructor(private sessionStorage: SessionStorageService) { }
+  constructor(private localStorage: LocalStorageService) { }
 
   getUser(): UsuarioMineradora {
-    return this.sessionStorage.retrieve('user');
+    return this.localStorage.retrieve('user');
   }
 
   setUser(usuarioMineradora: UsuarioMineradora) {
-     this.sessionStorage.store('user', usuarioMineradora);
+     this.localStorage.store('user', usuarioMineradora);
   }
 
   hasUser(): boolean {
-    return this.sessionStorage.retrieve('user') != null;
+    return this.localStorage.retrieve('user') != null;
+  }
+
+  logout() {
+    this.localStorage.clear('user');
   }
 
 }

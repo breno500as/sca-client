@@ -3,7 +3,7 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from
 import { AuthMineradoraService } from './auth-mineradora.service';
 
 @Injectable()
-export class ActivatePublicGuardService implements CanActivate {
+export class CanActivatePublicGuardService implements CanActivate {
 
   constructor(private authMineradoraService: AuthMineradoraService, private router: Router) { }
 
@@ -19,7 +19,6 @@ export class ActivatePublicGuardService implements CanActivate {
         return false;
     }
 
-    this.router.navigate(['/']);
     return true;
   }
 }
