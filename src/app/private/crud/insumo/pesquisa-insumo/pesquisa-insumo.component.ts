@@ -20,9 +20,11 @@ export class PesquisaInsumoComponent implements OnInit {
 
   insumos: Array<Insumo>;
 
-  pagina = 1;
+  page = 1;
 
-  total = 10;
+  size = 10;
+
+  sort = 'id';
 
   constructor(private insumoService: InsumoService, private router: Router, private toast: ToastrService) { }
 
@@ -40,7 +42,7 @@ export class PesquisaInsumoComponent implements OnInit {
   }
 
   pageChanged(event: any) {
-    this.pagina = event.page;
+    this.page = event.page;
     this.pesquisar();
   }
 
