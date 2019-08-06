@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FeatherModule } from 'angular-feather';
-import { Edit, Activity, Clipboard, Clock, FileText, ShoppingCart } from 'angular-feather/icons';
+import { Edit, Activity, Clipboard, Clock, FileText, ShoppingCart, Calendar } from 'angular-feather/icons';
 import { InsumoComponent } from './crud/insumo/insumo.component';
 import { HomeComponent } from './home/home.component';
 import { PrivateRoutingModule } from './private.routing';
@@ -11,7 +11,7 @@ import { MenuComponent } from './home/menu/menu.component';
 
 
 const icons = {
-  Edit, Activity, Clipboard, Clock, FileText, ShoppingCart
+  Edit, Activity, Clipboard, Clock, FileText, ShoppingCart, Calendar
 };
 
 

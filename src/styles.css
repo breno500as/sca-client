@@ -24,6 +24,11 @@ html {
   /*
    * Sidebar
    */
+
+   .border-menu {
+      border: solid;
+      border-width: 1px;
+   }
   
   .sidebar {
     position: fixed;
@@ -54,7 +59,7 @@ html {
   .sidebar .nav-link {
     font-weight: 500;
     color: #333;
-    font-size: 14px;
+    font-size: 13px;
   }
   
  
@@ -115,6 +120,8 @@ html {
     cursor: pointer;
     background-color: #343a40; 
     color: white;
+    border: solid;
+    border-width: 1px;
   }
 
   .text-white {
@@ -126,7 +133,7 @@ html {
   }
 
 
-  .menu-normal {
+  .menu-full {
     display: inherit;
   }
 
@@ -135,9 +142,9 @@ html {
      display: none;
   }
 
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 768px) {
   
-    .menu-normal {
+    .menu-full {
       display: none;
     }
   

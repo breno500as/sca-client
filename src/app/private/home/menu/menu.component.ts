@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-private-menu',
@@ -11,6 +11,9 @@ export class MenuComponent implements OnInit {
   @Input()
   responsivo: boolean;
 
+  @Output()
+  emitter = new EventEmitter();
+
   showCrudMenu = false;
   showBpmMenu = false;
   showMonitorMenu = false;
@@ -19,6 +22,10 @@ export class MenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  logout() {
+    this.emitter.emit();
   }
 
 }

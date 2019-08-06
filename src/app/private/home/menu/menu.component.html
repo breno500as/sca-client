@@ -1,5 +1,5 @@
 <ul class="nav flex-column">
-    <li class="main-item" (click)="showCrudMenu = !showCrudMenu">
+    <li class="main-item" style="margin-top: 2px;" (click)="showCrudMenu = !showCrudMenu">
      <h6 class="d-flex justify-content-between align-items-center px-3 mt-2 mb-1">
         <span>Cadastros</span>
         <a class="d-flex align-items-center text-white" href="#" >
@@ -34,7 +34,7 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#" routerLink="agenda-manutencao"  [ngClass]="responsivo ? 'text-white' : 'text-black'">
-            <i-feather name="clock" class="size-icon"></i-feather>
+            <i-feather name="calendar" class="size-icon"></i-feather>
                 Agendamento manutenção  
         </a>
     </li>
@@ -150,5 +150,11 @@
       </li>
 
   </ul>
+
+  <li class="main-item"  (click)="logout()" *ngIf="responsivo">
+    <h6 class="d-flex justify-content-between align-items-center px-3 mt-2 mb-1">
+      <span>Sair</span>
+    </h6>
+  </li>
 
 </ul>
