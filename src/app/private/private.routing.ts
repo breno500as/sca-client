@@ -5,6 +5,7 @@ import { AuthMineradoraGuardService } from '../core/services/auth-mineradora/aut
 import { InsumoComponent } from './crud/insumo/insumo.component';
 import { CanDeactivatePrivateGuardService } from './services/can-deactivate-private-guard.service';
 import { TodoComponent } from './todo/todo.component';
+import { PesquisaInsumoComponent } from './crud/insumo/pesquisa-insumo/pesquisa-insumo.component';
 
 const privateRoutes: Routes = [
   {
@@ -14,7 +15,18 @@ const privateRoutes: Routes = [
     canDeactivate: [CanDeactivatePrivateGuardService],
     children: [
       {
-        path: 'insumo', component: InsumoComponent
+        path: 'insumo',
+        children: [
+          {
+            path: '', component: PesquisaInsumoComponent
+          },
+          {
+            path: ':id', component: InsumoComponent
+          },
+          {
+            path: 'cadastro', component: InsumoComponent
+          }
+        ]
       },
       {
         path: 'marca-modelo', component: TodoComponent

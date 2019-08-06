@@ -10,6 +10,8 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -18,7 +20,7 @@ import { LoginComponent } from './login/login.component';
     LoginComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
     CoreModule.forRoot(),
@@ -26,7 +28,8 @@ import { LoginComponent } from './login/login.component';
     NgProgressModule,
     NgProgressHttpModule,
     NgHttpLoaderModule.forRoot(),
-    NgxWebstorageModule.forRoot()
+    NgxWebstorageModule.forRoot(),
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

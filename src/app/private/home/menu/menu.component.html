@@ -1,5 +1,5 @@
 <ul class="nav flex-column">
-    <li class="main-item" style="margin-top: 2px;" (click)="showCrudMenu = !showCrudMenu">
+    <li class="header" style="margin-top: 2px;" (click)="showCrudMenu = !showCrudMenu">
      <h6 class="d-flex justify-content-between align-items-center px-3 mt-2 mb-1">
         <span>Cadastros</span>
         <a class="d-flex align-items-center text-white" href="#" >
@@ -46,7 +46,7 @@
     </li>
   </ul>
 
-  <li class="main-item"  (click)="showBpmMenu = !showBpmMenu">
+  <li class="header"  (click)="showBpmMenu = !showBpmMenu">
     <h6 class="d-flex justify-content-between align-items-center px-3 mt-2 mb-1">
       <span>Atividades</span>
       <a class="d-flex align-items-center text-white" href="#">
@@ -91,7 +91,7 @@
 
   </ul>
 
-  <li class="main-item" (click)="showMonitorMenu = !showMonitorMenu">
+  <li class="header" (click)="showMonitorMenu = !showMonitorMenu">
    <h6 class="d-flex justify-content-between align-items-center px-3 mt-2 mb-1" >
       <span>Monitoramento</span>
       <a class="d-flex align-items-center text-white" href="#">
@@ -115,7 +115,7 @@
         </li>
   </ul>
 
-  <li class="main-item"  (click)="showRelatorioMenu = !showRelatorioMenu">
+  <li class="header"  (click)="showRelatorioMenu = !showRelatorioMenu">
     <h6 class="d-flex justify-content-between align-items-center px-3 mt-2 mb-1">
       <span>Relatórios</span>
       <a class="d-flex align-items-center text-white" href="#">
@@ -151,7 +151,7 @@
 
   </ul>
 
-  <li class="main-item"  (click)="logout()" *ngIf="responsivo">
+  <li class="header"  (click)="logout()" *ngIf="responsivo">
     <h6 class="d-flex justify-content-between align-items-center px-3 mt-2 mb-1">
       <span>Sair</span>
     </h6>

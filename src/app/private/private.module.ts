@@ -8,6 +8,10 @@ import { PrivateRoutingModule } from './private.routing';
 import { CanDeactivatePrivateGuardService } from './services/can-deactivate-private-guard.service';
 import { TodoComponent } from './todo/todo.component';
 import { MenuComponent } from './home/menu/menu.component';
+import { PesquisaInsumoComponent } from './crud/insumo/pesquisa-insumo/pesquisa-insumo.component';
+import { FormsModule } from '@angular/forms';
+import { InsumoService } from './services/insumo.service';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 
 const icons = {
@@ -21,13 +25,17 @@ const icons = {
     InsumoComponent,
     TodoComponent,
     MenuComponent,
+    PesquisaInsumoComponent,
   ],
   imports: [
     CommonModule,
+    FormsModule,
     PrivateRoutingModule,
-    FeatherModule.pick(icons)
+    FeatherModule.pick(icons),
+    PaginationModule.forRoot()
   ], providers: [
-    CanDeactivatePrivateGuardService
+    CanDeactivatePrivateGuardService,
+    InsumoService
   ]
 })
 export class PrivateModule { }

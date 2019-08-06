@@ -116,7 +116,7 @@ html {
     cursor: pointer;
   }
 
-  .main-item {
+  .header {
     cursor: pointer;
     background-color: #343a40; 
     color: white;

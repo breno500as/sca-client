@@ -4,6 +4,7 @@ import { AuthMineradoraService } from '../core/services/auth-mineradora/auth-min
 import { NgForm } from '@angular/forms';
 import { UsuarioMineradora } from '../classes/usuarioMineradora';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,9 @@ export class LoginComponent implements OnInit {
 
   usuario: UsuarioMineradora = new UsuarioMineradora();
 
-  constructor(private router: Router, public loginService: LoginService, public authMineradora: AuthMineradoraService) {
+  constructor(private router: Router, public loginService: LoginService,
+              private authMineradora: AuthMineradoraService,
+              private toastr: ToastrService) {
   }
 
   ngOnInit() {
@@ -31,6 +34,8 @@ export class LoginComponent implements OnInit {
       this.loginService.login(this.usuario).subscribe((u: UsuarioMineradora) => {
         this.authMineradora.setUser(u);
         this.router.navigate(['/private']);
+      }, (error) => {
+          this.toastr.error('Usuário ou senha incorretos');
       });
     }
 
