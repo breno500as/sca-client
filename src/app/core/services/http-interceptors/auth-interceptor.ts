@@ -1,4 +1,4 @@
-import { HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { HttpHandler, HttpInterceptor, HttpRequest, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthMineradoraService } from '../auth-mineradora/auth-mineradora.service';
 
@@ -13,11 +13,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     const currentUser = this.authMineradoraService.getUser();
     if (currentUser && currentUser.token) {
-      req = req.clone({
-            setHeaders: {
-                Authorization: `Bearer ${currentUser.token}`
-            }
-        });
+      req = req.clone({ headers: req.headers.set('Authorization', `Bearer ${currentUser.token}`) });
     }
 
     return next.handle(req);

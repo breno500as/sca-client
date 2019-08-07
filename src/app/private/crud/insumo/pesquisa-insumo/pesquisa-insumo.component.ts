@@ -34,8 +34,8 @@ export class PesquisaInsumoComponent implements OnInit {
 
   pesquisar() {
 
-     this.insumoService.pesquisar(this.filtro).subscribe((insumos: Array<Insumo>) => {
-        this.insumos = insumos;
+     this.insumoService.pesquisar(this.filtro, this.page, this.size).subscribe((result: any) => {
+        this.insumos = result._embedded.insumos;
      }, (erro) => {
         this.toast.error('Ocorreu um erro ao pesquisar o insumo');
      });

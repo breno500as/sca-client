@@ -11,7 +11,7 @@ export class InsumoService {
 
   constructor(private httpClient: HttpClient) { }
 
-  pesquisar(insumo: Insumo): Observable<Array<Insumo>> {
-    return this.httpClient.get<any>(`${environment.apiUrl}crud/pesquisar-insumo-component`);
+  pesquisar(insumo: Insumo, page: number, size: number): Observable<Array<Insumo>> {
+    return this.httpClient.get<any>(`${environment.apiUrl}crud/insumos?page=${page}&size=${size}`);
   }
 }
