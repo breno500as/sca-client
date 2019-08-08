@@ -1,3 +1,89 @@
-<p>
-  Insumo works!
-</p>
+<div class="container">
+
+
+    <div class="header mt-5">
+       <h3 class="d-flex justify-content-between align-items-center px-3 mt-2 mb-1">Cadastrar insumo</h3>
+    </div>
+  
+    <div class="card shadow">
+      <div class="card-title"></div>
+      <div class="card-body main-card">
+        <form #insumoForm="ngForm" novalidate>
+
+          <div class="form-row">
+               <div class="col-12 text-left">
+                  <label class="required" for="tipoInsumo">Tipo insumo</label>
+               </div>
+               <div class="col-12">
+                  <select id="tipoInsumo" name="tipoInsumo" (change)="changeInsumo()" [compareWith]="equalsById" [(ngModel)]="insumo.tipoInsumo" class="form-control" required>
+                      <option [ngValue]=""></option>
+                      <option *ngFor="let tipoInsumo of tiposInsumo" [ngValue]="tipoInsumo">{{tipoInsumo.descricao}}</option>
+                  </select>
+               </div>
+          </div>
+
+          <div class="form-row">
+              <div class="col-12">
+                 <label class="required" for="subTipoInsumo">Subtipo insumo</label>
+              </div>
+              <div class="col-12">
+                 <select id="subTipoInsumo" name="subTipoInsumo" (change)="changeSubTipoInsumo()"  [compareWith]="equalsById" [(ngModel)]="insumo.subTipoInsumo" class="form-control" required>
+                     <option [ngValue]=""></option>
+                     <option *ngFor="let subTipoInsumo of subTiposInsumo" [ngValue]="subTipoInsumo">{{subTipoInsumo.descricao}}</option>
+                 </select>
+              </div>
+         </div>
+
+         <div class="form-row">
+            <div class="col-12">
+                <label for="tipoMarcaModelo">Marca modelo</label>
+            </div>
+            <div class="col-12">
+               <select id="tipoMarcaModelo" name="tipoMarcaModelo" [compareWith]="equalsById" [(ngModel)]="insumo.tipoMarcaModelo" class="form-control">
+                   <option [ngValue]=""></option>
+                   <option *ngFor="let tipoMarcaModelo of tiposMarcaModelo" [ngValue]="tipoMarcaModelo">{{tipoMarcaModelo.marca}} - {{tipoMarcaModelo.modelo}} </option>
+               </select>
+            </div>
+         </div>
+
+
+         <div class="form-row">
+            <div class="col-12">
+                <label class="required" for="quantidade">Quantidade</label>
+            </div>
+            <div class="col-2">
+               <input id="quantidade" class="form-control" type="number" name="quantidade" [(ngModel)]="insumo.quantidade" />
+            </div>
+         </div>
+
+         <div class="form-row">
+            <div class="col-12">
+                <label for="linkInformacoesTecnicasFornecedor">Link informações técnicas fornecedor</label>
+            </div>
+            <div class="col-12">
+               <input id="linkInformacoesTecnicasFornecedor" class="form-control" type="text" name="linkInformacoesTecnicasFornecedor" [(ngModel)]="insumo.linkInformacoesTecnicasFornecedor" />
+            </div>
+         </div>
+
+
+         <div class="form-row">
+            <div class="col-12">
+                <label for="observacoes">Observações</label>
+            </div>
+            <div class="col-12">
+              <textarea  id="observacoes" name="observacoes" [(ngModel)]="insumo.observacoes"  rows="4" class="form-control" ></textarea>
+            </div>
+         </div>
+
+          <div class="row justify-content-center mt-4 pr-2">
+            <button type="submit" (click)="salva()" [disabled]="insumoForm.invalid" class="btn btn-success btn-lg mr-1">Salvar</button>
+            <button type="button" routerLink="/private/insumo"    class="btn btn-outline-secondary btn-sm mr-1">Pesquisar</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  
+  </div>
+  
+  

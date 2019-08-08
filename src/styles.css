@@ -158,5 +158,24 @@ html {
     flex: 1;
   }
 
+  label {
+    margin-top: 0.5rem;
+    margin-bottom: 0 !important;
+    font-weight: bold;
+  }
+
+  .main-card {
+    padding-right: 60px; 
+    padding-left: 60px;
+  }
+
+  .label-obrigatorio:after, div .required:after {
+    content: "*";
+    color: crimson;
+    padding-left: 6px;
+}
+div .required:after {
+    position: absolute;
+}
 
    

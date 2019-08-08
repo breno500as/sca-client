@@ -4,6 +4,7 @@ import { InsumoService } from 'src/app/private/services/insumo.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { TipoInsumo } from 'src/app/classes/tipoInsumo';
 
 @Component({
   selector: 'app-pesquisa-insumo',
@@ -12,7 +13,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class PesquisaInsumoComponent implements OnInit {
 
-
   @ViewChild('consultaInsumoForm')
   consultaInsumoForm: NgForm;
 
@@ -20,32 +20,38 @@ export class PesquisaInsumoComponent implements OnInit {
 
   insumos: Array<Insumo>;
 
+  tiposInsumo: Array<TipoInsumo>;
+
   page = 0;
 
-  size = 10;
+  size = 0;
 
   constructor(private insumoService: InsumoService, private router: Router, private toast: ToastrService) { }
 
   ngOnInit() {
-    this.pesquisar();
+    this.pesquisa();
+    this.insumoService.recuperaTipoInsumo().subscribe((tiposInsumo: Array<TipoInsumo>) => this.tiposInsumo = tiposInsumo);
   }
 
-  pesquisar() {
+  pesquisa() {
 
-     this.insumoService.pesquisar(this.filtro, this.page, this.size).subscribe((result: any) => {
-        this.insumos = result;
-     }, (erro) => {
+     this.insumoService.pesquisa(this.filtro, this.page, this.size).subscribe((result: any) =>  {
+       this.insumos = result;
+       if (this.insumos && this.insumos.length > 0) {
+         this.size = this.insumos[0].totalElementos;
+       }
+     }, () => {
         this.toast.error('Ocorreu um erro ao pesquisar o insumo');
      });
   }
 
   pageChanged(event: any) {
     this.page = event.page;
-    this.pesquisar();
+    this.pesquisa();
   }
 
   selecionaInsumo(insumo: Insumo) {
-    this.router.navigate(['/private/insumo/' + insumo.id]);
+    this.router.navigate(['private/insumo/' + insumo.id]);
   }
 
 }
