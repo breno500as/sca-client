@@ -20,11 +20,9 @@ export class PesquisaInsumoComponent implements OnInit {
 
   insumos: Array<Insumo>;
 
-  page = 1;
+  page = 0;
 
   size = 10;
-
-  sort = 'id';
 
   constructor(private insumoService: InsumoService, private router: Router, private toast: ToastrService) { }
 
@@ -35,7 +33,7 @@ export class PesquisaInsumoComponent implements OnInit {
   pesquisar() {
 
      this.insumoService.pesquisar(this.filtro, this.page, this.size).subscribe((result: any) => {
-        this.insumos = result._embedded.insumos;
+        this.insumos = result;
      }, (erro) => {
         this.toast.error('Ocorreu um erro ao pesquisar o insumo');
      });

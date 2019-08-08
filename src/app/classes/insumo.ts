@@ -4,7 +4,7 @@ import { SubTipoInsumo } from './subTipoInsumo';
 
 export class Insumo  {
      id: number;
-     marcaModelo: MarcaModelo;
+     tipoMarcaModelo: MarcaModelo;
      tipoInsumo: TipoInsumo;
      subTipoInsumo: SubTipoInsumo;
      observacoes: string;

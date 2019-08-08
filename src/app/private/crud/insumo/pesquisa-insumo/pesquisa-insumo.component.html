@@ -42,8 +42,8 @@
           <tr *ngFor="let insumo of insumos">
             <td>{{insumo.tipoInsumo.descricao}}</td>
             <td>{{insumo.subTipoInsumo.descricao}}</td>
-            <td>{{insumo.marcaModelo.marca}}</td>
-            <td>{{insumo.marcaModelo.modelo}}</td>
+            <td>{{insumo.tipoMarcaModelo.marca}}</td>
+            <td>{{insumo.tipoMarcaModelo.modelo}}</td>
             <td><button type="button" class="btn btn-primary btn-sm" (click)="selecionaInsumo(insumo)">Editar</button></td>
           </tr>
         </tbody>
