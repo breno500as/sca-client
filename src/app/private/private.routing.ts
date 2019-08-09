@@ -6,6 +6,7 @@ import { InsumoComponent } from './crud/insumo/insumo.component';
 import { CanDeactivatePrivateGuardService } from './services/can-deactivate-private-guard.service';
 import { TodoComponent } from './todo/todo.component';
 import { PesquisaInsumoComponent } from './crud/insumo/pesquisa-insumo/pesquisa-insumo.component';
+import { AlertaBarragemComponent } from './alerta-barragem/alerta-barragem.component';
 
 const privateRoutes: Routes = [
   {
@@ -29,15 +30,6 @@ const privateRoutes: Routes = [
         ]
       },
       {
-        path: 'marca-modelo', component: TodoComponent
-      },
-      {
-        path: 'tipo-insumo', component: TodoComponent
-      },
-      {
-        path: 'subtipo-insumo', component: TodoComponent
-      },
-      {
         path: 'agenda-manutencao', component: TodoComponent
       },
       {
@@ -56,7 +48,7 @@ const privateRoutes: Routes = [
         path: 'atv-preparacao', component: TodoComponent
       },
       {
-        path: 'alerta-barragem', component: TodoComponent
+        path: 'alerta-barragem', component: AlertaBarragemComponent
       },
       {
         path: 'dados-monitoramento', component: TodoComponent
