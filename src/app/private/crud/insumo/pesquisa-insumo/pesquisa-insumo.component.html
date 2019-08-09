@@ -62,8 +62,14 @@
     </div>
 
     <div class="pagination justify-content-center" *ngIf="insumos && insumos.length > 0">
-      <pagination [totalItems]="size" [(ngModel)]="page" [maxSize]="10" class="pagination-sm"
-        [boundaryLinks]="true" [rotate]="false" (paginas)="paginas = $event" (pageChanged)="pageChanged($event)"
+      
+    
+      <pagination 
+          [totalItems]="totalElementos" 
+          [(ngModel)]="currentPage" 
+          [maxSize]="maxSize" 
+          class="pagination-sm"
+          (pageChanged)="pageChanged($event)"
         nextText="próxima" firstText="primeira" lastText="última" previousText="anterior">
       </pagination>
     </div>

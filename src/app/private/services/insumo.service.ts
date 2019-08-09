@@ -14,9 +14,9 @@ export class InsumoService {
 
   constructor(private httpClient: HttpClient) { }
 
-  pesquisa(insumo: Insumo, page: number, size: number): Observable<Array<Insumo>> {
+  pesquisa(insumo: Insumo, page: number, maxSize: number): Observable<Array<Insumo>> {
 
-    let params =  `page=${page}&size=${size}`;
+    let params =  `page=${page}&size=${maxSize}`;
 
     if (insumo.tipoInsumo) {
        params += `&tipoInsumo=${insumo.tipoInsumo}`;

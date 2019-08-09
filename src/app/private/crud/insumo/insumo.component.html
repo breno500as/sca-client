@@ -52,7 +52,7 @@
                 <label class="required" for="quantidade">Quantidade</label>
             </div>
             <div class="col-2">
-               <input id="quantidade" class="form-control" type="number" name="quantidade" [(ngModel)]="insumo.quantidade" />
+               <input id="quantidade" class="form-control" type="number" name="quantidade" required [(ngModel)]="insumo.quantidade" />
             </div>
          </div>
 
@@ -77,7 +77,7 @@
 
           <div class="row justify-content-center mt-4 pr-2">
             <button type="submit" (click)="salva()" [disabled]="insumoForm.invalid" class="btn btn-success btn-lg mr-1">Salvar</button>
-            <button type="button" routerLink="/private/insumo"    class="btn btn-outline-secondary btn-sm mr-1">Pesquisar</button>
+            <button type="button" (click)="novo()"  class="btn btn-outline-secondary btn-sm mr-1">Novo Insumo</button>
           </div>
           
         </form>

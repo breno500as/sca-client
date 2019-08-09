@@ -22,9 +22,11 @@ export class PesquisaInsumoComponent implements OnInit {
 
   tiposInsumo: Array<TipoInsumo>;
 
-  page = 0;
+  currentPage = 1;
 
-  size = 0;
+  totalElementos = 0;
+
+  maxSize = 10;
 
   constructor(private insumoService: InsumoService, private router: Router, private toast: ToastrService) { }
 
@@ -35,18 +37,19 @@ export class PesquisaInsumoComponent implements OnInit {
 
   pesquisa() {
 
-     this.insumoService.pesquisa(this.filtro, this.page, this.size).subscribe((result: any) =>  {
+     this.insumoService.pesquisa(this.filtro, this.currentPage, this.maxSize).subscribe((result: any) =>  {
        this.insumos = result;
        if (this.insumos && this.insumos.length > 0) {
-         this.size = this.insumos[0].totalElementos;
+         this.totalElementos = this.insumos[0].totalElementos;
        }
      }, () => {
         this.toast.error('Ocorreu um erro ao pesquisar o insumo');
      });
   }
+  
 
   pageChanged(event: any) {
-    this.page = event.page;
+    this.currentPage = event.page;
     this.pesquisa();
   }
 

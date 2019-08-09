@@ -12,7 +12,7 @@ import { PesquisaInsumoComponent } from './crud/insumo/pesquisa-insumo/pesquisa-
 import { FormsModule } from '@angular/forms';
 import { InsumoService } from './services/insumo.service';
 import { TooltipModule } from 'ngx-bootstrap';
-import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { PaginationModule } from 'ngx-bootstrap';
 
 
 const icons = {

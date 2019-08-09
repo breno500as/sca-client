@@ -48,26 +48,27 @@ export class InsumoComponent implements OnInit {
     });
   }
 
-  
-
   changeInsumo() {
-    
     if (this.insumo.tipoInsumo) {
       this.insumoService.recuperaSubTipoInsumo(this.insumo.tipoInsumo).subscribe((subTiposInsumo: Array<SubTipoInsumo>) => this.subTiposInsumo = subTiposInsumo);
     }
-    
   }
 
   changeSubTipoInsumo() {
-    
     if (this.insumo.subTipoInsumo) {
       this.insumoService.recuperaTipoMarcaModelo(this.insumo.subTipoInsumo).subscribe((tiposMarcaModelo: Array<TipoMarcaModelo>) => this.tiposMarcaModelo = tiposMarcaModelo);
     }
-  
+  }
+
+  novo() {
+     this.insumo = new Insumo();
+     this.insumoForm.resetForm();
+     this.router.navigate(['private/insumo/novo']);
   }
 
 
   salva() {
+
      if (this.insumo.id) {
         this.atualiza();
         return;
@@ -80,6 +81,9 @@ export class InsumoComponent implements OnInit {
   }
 
   atualiza() {
+     if (!this.insumo.tipoMarcaModelo) {
+       this.insumo.tipoMarcaModelo = new TipoMarcaModelo();
+     }
      this.insumoService.atualiza(this.insumo).subscribe((insumo: Insumo) => this.toast.success(MSG_ATUALIZADO_SUCESSO));
   }
 
