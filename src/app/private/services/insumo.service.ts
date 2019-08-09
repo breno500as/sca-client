@@ -37,6 +37,10 @@ export class InsumoService {
     return this.httpClient.put<Insumo>(`${environment.apiUrl}crud/insumos/${insumo.id}`, insumo);
   }
 
+  deleta(insumo: Insumo): Observable<any> {
+    return this.httpClient.delete<any>(`${environment.apiUrl}crud/insumos/${insumo.id}`);
+  }
+
   recuperaTipoInsumo(): Observable<Array<TipoInsumo>> {
     return this.httpClient.get<Array<TipoInsumo>>(`${environment.apiUrl}crud/tipos-insumo`);
   }

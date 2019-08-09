@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { TipoInsumo } from 'src/app/classes/tipoInsumo';
+import { MSG_EXCLUIDO_SUCESSO } from 'src/app/core/helpers/util';
 
 @Component({
   selector: 'app-pesquisa-insumo',
@@ -41,12 +42,13 @@ export class PesquisaInsumoComponent implements OnInit {
        this.insumos = result;
        if (this.insumos && this.insumos.length > 0) {
          this.totalElementos = this.insumos[0].totalElementos;
+       } else {
+          this.totalElementos = 0;
        }
      }, () => {
         this.toast.error('Ocorreu um erro ao pesquisar o insumo');
      });
   }
-  
 
   pageChanged(event: any) {
     this.currentPage = event.page;
@@ -55,6 +57,13 @@ export class PesquisaInsumoComponent implements OnInit {
 
   selecionaInsumo(insumo: Insumo) {
     this.router.navigate(['private/insumo/' + insumo.id]);
+  }
+
+  deletansumo(insumo: Insumo) {
+     this.insumoService.deleta(insumo).subscribe(() => {
+          this.toast.success(MSG_EXCLUIDO_SUCESSO);
+          this.pesquisa();
+     });
   }
 
 }

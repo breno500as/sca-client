@@ -55,7 +55,16 @@
             <td>{{insumo.subTipoInsumo.descricao}}</td>
             <td>{{insumo.tipoMarcaModelo?.marca}}</td>
             <td>{{insumo.tipoMarcaModelo?.modelo}}</td>
-            <td> <i-feather name="edit"  (click)="selecionaInsumo(insumo)" style="cursor: pointer" tooltip="Editar" ></i-feather>    </td>
+            <td> 
+               <ng-template #popTemplate>
+                  <div class="text-center">
+                    <button type="button" class="btn btn-outline-secondary btn-sm mr-2" (click)="deletansumo(insumo)">Sim</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" (click)="pop.hide()">Não</button>
+                  </div>
+                </ng-template>
+               <i-feather name="edit"  (click)="selecionaInsumo(insumo)" class="mr-2" style="cursor: pointer" tooltip="Editar" ></i-feather> 
+               <i-feather name="trash"   #pop="bs-popover" [popover]="popTemplate" popoverTitle="Confirma a exclusão?"  style="cursor: pointer" tooltip="Deletar" ></i-feather>
+            </td>
           </tr>
         </tbody>
       </table>
