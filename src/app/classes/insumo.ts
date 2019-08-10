@@ -11,4 +11,5 @@ export class Insumo  {
      linkInformacoesTecnicasFornecedor: string;
      quantidade: number;
      totalElementos: number;
+     codigosConcatenadosInsumo: string;
 }

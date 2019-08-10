@@ -6,7 +6,7 @@ import { InsumoComponent } from './crud/insumo/insumo.component';
 import { CanDeactivatePrivateGuardService } from './services/can-deactivate-private-guard.service';
 import { TodoComponent } from './todo/todo.component';
 import { PesquisaInsumoComponent } from './crud/insumo/pesquisa-insumo/pesquisa-insumo.component';
-import { AlertaBarragemComponent } from './alerta-barragem/alerta-barragem.component';
+import { AlertaBarragemComponent } from './monitor/alerta-barragem/alerta-barragem.component';
 
 const privateRoutes: Routes = [
   {

@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { InsumoService } from './services/insumo.service';
 import { TooltipModule, PopoverModule } from 'ngx-bootstrap';
 import { PaginationModule } from 'ngx-bootstrap';
-import { AlertaBarragemComponent } from './alerta-barragem/alerta-barragem.component';
+import { AlertaBarragemComponent } from './monitor/alerta-barragem/alerta-barragem.component';
 
 
 const icons = {

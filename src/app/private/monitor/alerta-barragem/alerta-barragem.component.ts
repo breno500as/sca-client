@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Alerta } from 'src/app/classes/alerta';
 import { NivelAlertaEnum } from 'src/app/enum/nivel-alerta-enum';
-import { AlertaService } from '../services/alerta.service';
+import { AlertaService } from '../../services/alerta.service';
 
 @Component({
   selector: 'app-alerta-barragem',
