@@ -4,7 +4,7 @@ COPY package.json ./
 RUN npm install && mkdir /sca-client && mv ./node_modules ./sca-client
 WORKDIR /sca-client
 COPY . .
-RUN npm run build --prod --build-optimizer
+RUN npm run build --prod
 
 #scripts responsáveis por configurar o servidor nginx e expor a aplicação
 FROM nginx:1.13.9-alpine

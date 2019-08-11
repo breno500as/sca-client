@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --base-href /sca-client",
+    "start": "ng serve",
     "build": "ng build --base-href /sca-client",
     "test": "ng test",
     "lint": "ng lint",
