@@ -14,10 +14,10 @@ export class MenuComponent implements OnInit {
   @Output()
   emitter = new EventEmitter();
 
-  showCrudMenu = false;
-  showBpmMenu = false;
-  showMonitorMenu = false;
-  showRelatorioMenu = false;
+  showCrudMenu = true;
+  showBpmMenu = true;
+  showMonitorMenu = true;
+  showRelatorioMenu = true;
 
   constructor() { }
 

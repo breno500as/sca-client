@@ -20,6 +20,17 @@ html {
     height: 12px;
     color: #999;
   }
+
+  .complete-task-icon {
+    width: 50px !important;
+    height: 50px !important;
+    color: green;
+    cursor: pointer;
+  }
+
+  .complete-task-icon > svg {
+    margin-bottom: 10px;
+  }
   
   /*
    * Sidebar

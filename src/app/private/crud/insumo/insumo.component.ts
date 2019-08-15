@@ -37,7 +37,7 @@ export class InsumoComponent implements OnInit {
     this.insumoService.recuperaTipoInsumo().subscribe((tiposInsumo: Array<TipoInsumo>) => this.tiposInsumo = tiposInsumo);
 
     this.route.params.subscribe(params => {
-      const id = params['id'];
+      const id = params.id;
       if (!isNaN(id)) {
         this.insumoService.findById(id).subscribe((insumo: Insumo) => {
           this.insumo = insumo;

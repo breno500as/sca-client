@@ -1,4 +1,4 @@
-import { NivelAlertaEnum } from '../enum/nivel-alerta-enum';
+import { NivelAlertaEnum } from '../enum/nivelAlertaEnum';
 
 export class Alerta {
     nivelAlerta: NivelAlertaEnum;

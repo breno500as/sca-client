@@ -1,4 +1,4 @@
-import { NgModule, Optional, SkipSelf, ModuleWithProviders } from '@angular/core';
+import { NgModule, Optional, SkipSelf, ModuleWithProviders, LOCALE_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthMineradoraGuardService } from './services/auth-mineradora/auth-mineradora-guard.service';
@@ -28,7 +28,8 @@ export class CoreModule {
         AuthMineradoraService,
         CanActivatePublicGuardService,
         LoginService,
-        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+        { provide: LOCALE_ID, useValue: 'pt' },
       ]
     };
 }

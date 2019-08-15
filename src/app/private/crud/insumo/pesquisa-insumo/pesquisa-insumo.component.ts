@@ -55,11 +55,11 @@ export class PesquisaInsumoComponent implements OnInit {
     this.pesquisa();
   }
 
-  selecionaInsumo(insumo: Insumo) {
+  seleciona(insumo: Insumo) {
     this.router.navigate(['private/insumo/' + insumo.id]);
   }
 
-  deletansumo(insumo: Insumo) {
+  deleta(insumo: Insumo) {
      this.insumoService.deleta(insumo).subscribe(() => {
           this.toast.success(MSG_EXCLUIDO_SUCESSO);
           this.pesquisa();

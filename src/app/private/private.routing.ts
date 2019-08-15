@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthMineradoraGuardService } from '../core/services/auth-mineradora/auth-mineradora-guard.service';
+import { AtividadePerfuracaoComponent } from './bpm/atividade-perfuracao/atividade-perfuracao.component';
+import { PesquisaAtividadePerfuracaoComponent } from './bpm/atividade-perfuracao/pesquisa-atividade-perfuracao/pesquisa-atividade-perfuracao.component';
 import { InsumoComponent } from './crud/insumo/insumo.component';
+import { PesquisaInsumoComponent } from './crud/insumo/pesquisa-insumo/pesquisa-insumo.component';
+import { HomeComponent } from './home/home.component';
+import { AlertaBarragemComponent } from './monitor/alerta-barragem/alerta-barragem.component';
 import { CanDeactivatePrivateGuardService } from './services/can-deactivate-private-guard.service';
 import { TodoComponent } from './todo/todo.component';
-import { PesquisaInsumoComponent } from './crud/insumo/pesquisa-insumo/pesquisa-insumo.component';
-import { AlertaBarragemComponent } from './monitor/alerta-barragem/alerta-barragem.component';
 
 const privateRoutes: Routes = [
   {
@@ -36,16 +38,30 @@ const privateRoutes: Routes = [
         path: 'aquisicao-insumo', component: TodoComponent
       },
       {
-        path: 'estudo', component: TodoComponent
+        path: 'bpm-perfuracao',
+        children: [
+          {
+            path: '', component: PesquisaAtividadePerfuracaoComponent
+          },
+          {
+            path: ':id', component: AtividadePerfuracaoComponent
+          },
+          {
+            path: 'cadastro', component: AtividadePerfuracaoComponent
+          }
+        ]
       },
       {
-        path: 'atv-perfuracao', component: TodoComponent
+        path: 'bpm-transporte', component: TodoComponent
       },
       {
-        path: 'atv-transporte', component: TodoComponent
+        path: 'bpm-preparacao', component: TodoComponent
       },
       {
-        path: 'atv-preparacao', component: TodoComponent
+        path: 'bpm-preservacao-ambiente', component: TodoComponent
+      },
+      {
+        path: 'bpm-estudo', component: TodoComponent
       },
       {
         path: 'alerta-barragem', component: AlertaBarragemComponent

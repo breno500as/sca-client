@@ -1,0 +1,121 @@
+<div class="container">
+
+
+  <div class="header mt-5">
+    <h3 class="d-flex justify-content-between align-items-center px-3 mt-2 mb-1">Atividade perfuração</h3>
+  </div>
+
+  <div class="card shadow">
+    <div class="card-title"></div>
+    <div class="card-body main-card">
+      <form #atividadePerfuracaoForm="ngForm" novalidate>
+
+        <div class="form-row" *ngIf="atividadePerfuracao.id">
+          <div class="col-12">
+            <label class="required" for="usuarioMineradora">Identificador</label>
+          </div>
+          <div class="col-12">
+            <span class="text-muted">{{atividadePerfuracao.id}}</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col-12">
+            <label class="required" for="usuarioMineradora">Operador atividade perfuração</label>
+          </div>
+          <div class="col-12">
+            <select name="usuarioMineradora" [(ngModel)]="atividadePerfuracao.usuarioMineradora" required
+              class="form-control" *ngIf="!atividadePerfuracao.id">
+              <option [ngValue]=""></option>
+              <option *ngFor="let usuario of usuariosMineradora" [ngValue]="usuario">{{usuario.nome}}</option>
+            </select>
+            <span class="text-muted"
+              *ngIf="atividadePerfuracao.id">{{atividadePerfuracao.usuarioMineradora?.nome}}</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col-12">
+            <label class="required" for="dataAtividade">Data atividade</label>
+          </div>
+          <div class="col-12">
+            <input type="text" id="dataAtividade" placeholder="Data início e Data previsão de término" required
+              [(ngModel)]="rangeDatas" 
+              name="rangeDatas" 
+              class="form-control" *ngIf="!atividadePerfuracao.id"
+              [minDate]="minDate"
+              bsDaterangepicker [bsConfig]="{ isAnimated: true, rangeInputFormat: 'DD/MM/YYYY'}">
+            <span class="text-muted"
+              *ngIf="atividadePerfuracao.id">{{atividadePerfuracao.dataInicioAtividade | date: 'dd/MM/yyyy'}} até
+              {{atividadePerfuracao.dataPrevisaoTerminoAtividade | date: 'dd/MM/yyyy'}}</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col-12">
+            <label for="observacoes">Orientações para realização da atividade</label>
+          </div>
+          <div class="col-12">
+            <textarea id="observacoes" *ngIf="!atividadePerfuracao.id" name="observacoes"
+              [(ngModel)]="atividadePerfuracao.observacoes" rows="4" class="form-control"></textarea>
+            <span class="text-muted" *ngIf="atividadePerfuracao.id">{{atividadePerfuracao.observacoes}}</span>
+            <span class="text-muted" *ngIf="atividadePerfuracao.id && !atividadePerfuracao.observacoes">Nenhuma orientação</span>
+          </div>
+        </div>
+
+        <div class="form-row mt-4" *ngIf="atividadePerfuracao.id">
+          
+          <div class="col-12 text-center">
+            <h2> Status </h2>
+          </div>
+          
+          <div class="col-12 text-center">
+            <h4>{{task?.name}}</h4>
+          </div>
+      
+          <div class="col-12 text-center mt-2 mb-3" *ngIf="task && task.taskDefinitionKey === bpmAtividadePerfuracaoEnum.INDENTIFICA_FALHA_NAS_ROCHAS">
+              <div> Qual será a forma utilizada para remoção das rochas? </div>
+              <span *ngFor="let decisaoRemocao of decisoesRemocao">
+                  <input type="radio"
+                         class="mr-1"
+                         name="decisaoDesmonte"
+                         [(ngModel)]="modelDecisaoRemocao"
+                         [value]="decisaoRemocao" />
+                      {{decisaoRemocaoEnum[decisaoRemocao]}}
+              </span>
+          </div>
+
+          <div class="col-12 text-center mt-2 mb-3" *ngIf="task && (task.taskDefinitionKey === bpmAtividadePerfuracaoEnum.DESMONTA_ROCHA_EXPLOSIVOS || task.taskDefinitionKey === bpmAtividadePerfuracaoEnum.DESMONTA_ROCHA_EQUIPAMENTOS)">
+              <div> Deseja registrar algum problema? </div>
+              <span *ngFor="let simNao of decisoesProblema">
+                  <input type="radio"
+                         class="mr-1"
+                         (change)="changeProblema()"
+                         name="decisaoProblema"
+                         [(ngModel)]="modelSimNaoProblema"
+                         [value]="simNao" />
+                    {{simNaoEnum[simNao]}}
+              </span>
+          </div>
+
+          <div class="col-12 text-center mt-2" *ngIf=" task && task.taskDefinitionKey else fimAtividade">
+            <button class="btn btn-success btn-sm" (click)="concluiAtividade()">
+              <i-feather name="check"></i-feather> Concluir atividade
+            </button>
+          </div>
+          <ng-template #fimAtividade>
+             <div class="col-12 alert alert-success text-center">
+              <h4><i-feather name="check" class="complete-task-icon"></i-feather> Atividade concluída com sucesso </h4>
+             </div>
+          </ng-template>
+        </div>
+
+        <div class="row justify-content-center mt-4 pr-2" *ngIf="!atividadePerfuracao.id">
+          <button type="submit" (click)="incluiAtividade()" [disabled]="atividadePerfuracaoForm.invalid" class="btn btn-success btn-lg mr-1">Iniciar atividade</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</div>

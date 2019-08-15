@@ -14,12 +14,12 @@ export class InsumoService {
 
   constructor(private httpClient: HttpClient) { }
 
-  pesquisa(insumo: Insumo, page: number, maxSize: number): Observable<Array<Insumo>> {
+  pesquisa(filtro: Insumo, page: number, maxSize: number): Observable<Array<Insumo>> {
 
     let params =  `page=${page}&size=${maxSize}`;
 
-    if (insumo.tipoInsumo) {
-       params += `&tipoInsumo=${insumo.tipoInsumo}`;
+    if (filtro.tipoInsumo) {
+       params += `&tipoInsumo=${filtro.tipoInsumo}`;
     }
 
     return this.httpClient.get<Array<Insumo>>(`${environment.apiUrl}crud/insumos?${params}`);
@@ -38,7 +38,7 @@ export class InsumoService {
   }
 
   deleta(insumo: Insumo): Observable<any> {
-    return this.httpClient.delete<any>(`${environment.apiUrl}crud/insumos/${insumo.id}`);
+    return this.httpClient.delete(`${environment.apiUrl}crud/insumos/${insumo.id}`);
   }
 
   recuperaTipoInsumo(): Observable<Array<TipoInsumo>> {

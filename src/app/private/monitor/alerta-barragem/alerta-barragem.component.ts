@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Alerta } from 'src/app/classes/alerta';
-import { NivelAlertaEnum } from 'src/app/enum/nivel-alerta-enum';
+import { NivelAlertaEnum } from 'src/app/enum/nivelAlertaEnum';
 import { AlertaService } from '../../services/alerta.service';
 
 @Component({
