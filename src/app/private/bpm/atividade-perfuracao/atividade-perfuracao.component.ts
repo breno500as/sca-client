@@ -85,7 +85,7 @@ export class AtividadePerfuracaoComponent implements OnInit {
         .subscribe((tasks: Array<Task>) => this.task = tasks[0]);
       this.rangeDatas = new Array<Date>();
       this.rangeDatas.push(atividadePerfuracao.dataInicioAtividade);
-      this.rangeDatas.push(atividadePerfuracao.dataPrevisaoTerminoAtividade);
+      this.rangeDatas.push(atividadePerfuracao.dataTerminoAtividade);
     });
   }
 
@@ -98,7 +98,7 @@ export class AtividadePerfuracaoComponent implements OnInit {
     }
 
     this.atividadePerfuracao.dataInicioAtividade = this.rangeDatas[0];
-    this.atividadePerfuracao.dataPrevisaoTerminoAtividade = this.rangeDatas[1];
+    this.atividadePerfuracao.dataTerminoAtividade = this.rangeDatas[1];
     this.atividadePerfuracao.usuarioMineradoraId = this.atividadePerfuracao.usuarioMineradora.id;
 
     this.atividadePerfuracaoService.incluiAtividade(this.atividadePerfuracao).subscribe((atividadePerfuracao: AtividadePerfuracao) =>  {

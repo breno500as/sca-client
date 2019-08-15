@@ -42,7 +42,7 @@
                Data início
             </th>
             <th scope="col">
-               Data previsão término
+               Data término
             </th>
             <th scope="col">Ações</th>
           </tr>
@@ -52,7 +52,7 @@
              
             <td>{{atividadePerfuracao.usuarioMineradora?.nome}}</td>
             <td>{{atividadePerfuracao.dataInicioAtividade | date: 'dd/MM/yyyy'}}</td>
-            <td>{{atividadePerfuracao.dataPrevisaoTerminoAtividade | date: 'dd/MM/yyyy'}}</td>
+            <td>{{atividadePerfuracao.dataTerminoAtividade | date: 'dd/MM/yyyy'}}</td>
             <td> 
                <i-feather name="edit"  (click)="seleciona(atividadePerfuracao)" class="mr-2" style="cursor: pointer" tooltip="Editar" ></i-feather> 
             </td>

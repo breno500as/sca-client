@@ -47,19 +47,19 @@
               bsDaterangepicker [bsConfig]="{ isAnimated: true, rangeInputFormat: 'DD/MM/YYYY'}">
             <span class="text-muted"
               *ngIf="atividadePerfuracao.id">{{atividadePerfuracao.dataInicioAtividade | date: 'dd/MM/yyyy'}} até
-              {{atividadePerfuracao.dataPrevisaoTerminoAtividade | date: 'dd/MM/yyyy'}}</span>
+              {{atividadePerfuracao.dataTerminoAtividade | date: 'dd/MM/yyyy'}}</span>
           </div>
         </div>
 
         <div class="form-row">
           <div class="col-12">
-            <label for="observacoes">Orientações para realização da atividade</label>
+            <label for="orientacoes">Orientações para realização da atividade</label>
           </div>
           <div class="col-12">
-            <textarea id="observacoes" *ngIf="!atividadePerfuracao.id" name="observacoes"
-              [(ngModel)]="atividadePerfuracao.observacoes" rows="4" class="form-control"></textarea>
-            <span class="text-muted" *ngIf="atividadePerfuracao.id">{{atividadePerfuracao.observacoes}}</span>
-            <span class="text-muted" *ngIf="atividadePerfuracao.id && !atividadePerfuracao.observacoes">Nenhuma orientação</span>
+            <textarea id="orientacoes" *ngIf="!atividadePerfuracao.id" name="orientacoes"
+              [(ngModel)]="atividadePerfuracao.orientacoes" rows="4" class="form-control"></textarea>
+            <span class="text-muted" *ngIf="atividadePerfuracao.id">{{atividadePerfuracao.orientacoes}}</span>
+            <span class="text-muted" *ngIf="atividadePerfuracao.id && !atividadePerfuracao.orientacoes">Nenhuma orientação</span>
           </div>
         </div>
 

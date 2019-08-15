@@ -3,11 +3,11 @@ import { UsuarioMineradora } from './usuarioMineradora';
 
 export class AtividadePerfuracao {
      id: number;
-     observacoes: string;
+     orientacoes: string;
      usuarioMineradora: UsuarioMineradora;
      usuarioMineradoraId: number;
      registrosOcorrencias: Array<RegistroOcorrencia>;
      dataInicioAtividade: Date;
-     dataPrevisaoTerminoAtividade: Date;
+     dataTerminoAtividade: Date;
      totalElementos: number;
 }
