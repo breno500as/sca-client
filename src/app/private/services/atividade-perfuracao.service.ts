@@ -2,11 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AtividadePerfuracao } from 'src/app/classes/atividadePerfuracao';
-import { Insumo } from 'src/app/classes/insumo';
-import { SubTipoInsumo } from 'src/app/classes/subTipoInsumo';
-import { TipoInsumo } from 'src/app/classes/tipoInsumo';
-import { environment } from 'src/environments/environment.test';
 import { Task } from 'src/app/classes/task';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'

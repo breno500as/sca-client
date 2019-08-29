@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { Insumo } from 'src/app/classes/insumo';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment.test';
+
 import { TipoInsumo } from 'src/app/classes/tipoInsumo';
 import { SubTipoInsumo } from 'src/app/classes/subTipoInsumo';
 import { TipoMarcaModelo } from 'src/app/classes/tipoMarcaModelo';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
