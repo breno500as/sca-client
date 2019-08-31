@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { LoginService } from '../core/services/login.service';
 import { AuthMineradoraService } from '../core/services/auth-mineradora/auth-mineradora.service';
 import { NgForm } from '@angular/forms';
@@ -22,10 +22,12 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router, public loginService: LoginService,
               private authMineradora: AuthMineradoraService,
-              private toastr: ToastrService) {
+              private toastr: ToastrService,
+              private elRef: ElementRef) {
   }
 
   ngOnInit() {
+    this.elRef.nativeElement.ownerDocument.body.style.backgroundColor = '#556B2F';
   }
 
   login() {

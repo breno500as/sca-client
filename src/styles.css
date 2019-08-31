@@ -8,12 +8,10 @@ html {
   }
   
   body {
-    background-color: #e6e6fa;  
     overflow-y: scroll;
-      overflow-x: hidden;
-    font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+    font-family: 'Roboto','Helvetica Neue',helvetica,arial,sans-serif;
   }
-
 
   .size-icon {
     width: 12px;
@@ -36,10 +34,6 @@ html {
    * Sidebar
    */
 
-   .border-menu {
-      border: solid;
-      border-width: 1px;
-   }
   
   .sidebar {
     position: fixed;
@@ -47,7 +41,7 @@ html {
     bottom: 0;
     left: 0;
     z-index: 100; /* Coloca atrás do navbar */
-    padding: 48px 0 0; /* Altura do navbar */
+    padding: 46px 0 0; /* Altura do navbar */
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
   }
   
@@ -120,7 +114,43 @@ html {
   }
 
   .nav-item:focus, .nav-item:hover {
-    background-color: #eee;
+    background-color: #dee2e6;
+  }
+
+  .input-icon {
+    position: absolute;
+    top: 50%;
+    margin-top: -9px;
+    left: 12px;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .login-form-control {
+    position: relative;
+  }
+
+  .input-icon::after {
+    content: '';
+    position: absolute;
+    right: -11px;
+    top: -10px;
+    bottom: -10px;
+    width: 1px;
+    opacity: .5;
+    background-color: rgba(212,212,212,0);
+    background-image: -webkit-linear-gradient(bottom,rgba(212,212,212,0) 0,#d4d4d4 30%,#d4d4d4 70%,rgba(212,212,212,0) 100%);
+    background-image: linear-gradient(to top,rgba(212,212,212,0) 0,#d4d4d4 30%,#d4d4d4 70%,rgba(212,212,212,0) 100%);
+  }
+
+  .icon-username {
+    background: url(assets/img/icon-username.png);
+    background-repeat: repeat;
+  }
+
+  .icon-password {
+    background: url(assets/img/icon-password.png);
+    background-repeat: repeat;
   }
 
   .nav-link {
@@ -129,7 +159,7 @@ html {
 
   .header {
     cursor: pointer;
-    background-color: #343a40; 
+    background-color: #228B22; 
     color: white;
     border: solid;
     border-width: 1px;

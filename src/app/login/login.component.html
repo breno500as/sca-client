@@ -1,11 +1,21 @@
-<div style="margin-top: 150px;">
-  <form class="form-signin shadow border-menu" #loginForm="ngForm">
-      <h2 class="h3 mt-2 pb-4 text-muted text-center" >Sistema de Controle Ambiental</h2>
-      <label for="inputUser" class="sr-only">Endereço de email</label>
-      <input type="email"  [(ngModel)]="usuario.email" name="email" #email="ngModel"  id="inputUser" class="form-control" placeholder="Email" required autofocus>
-      <label for="inputPassword" class="sr-only">Senha</label>
-      <input type="password" id="inputPassword"[(ngModel)]="usuario.senha" name="senha" #senha="ngModel"  class="form-control" placeholder="Senha" required>
+<div style="margin-top: 250px;">
+  
+   
+    <form class="form-signin shadow border-menu" #loginForm="ngForm">
+      <h2 class="h3 mt-2 pb-4 text-center"  style="color: #006400">Acesso ao sistema</h2>
       
-      <button class="btn btn-lg btn-primary btn-block mt-4 mb-3" type="submit" (click)="login()">Login</button>
+      <div class="login-form-control">
+        <div class="input-icon icon-username">
+        </div>
+        <input type="email"  [(ngModel)]="usuario.email" style="padding-left: 50px;" name="email" #email="ngModel"  id="inputUser" class="form-control" placeholder="Email" required autofocus>
+      </div>
+
+      <div class="login-form-control">
+        <div class="input-icon icon-password">
+        </div>
+        <input type="password" id="inputPassword" style="padding-left: 50px;" [(ngModel)]="usuario.senha" name="senha" #senha="ngModel"  class="form-control" placeholder="Senha" required> 
+      </div>
+    
+      <button class="btn btn-lg btn-primary btn-block mt-4 mb-3" style="background-color: #006400; border-color: #006400" type="submit" (click)="login()">Login</button>
   </form>
 </div>
