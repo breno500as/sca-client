@@ -2,9 +2,12 @@
 <!-- Menu web comum -->
 <div class="menu-full">
   <nav class="navbar fixed-top flex-md-nowrap p-0 border-menu" style="background-color: #228B22">
+    <div style="text-align: start">
+    <img src="assets/img/leaf-solid.png"  class="img img-home"/>
     <a class="navbar-brand col-sm-3 col-md-2 mr-0 text-white">
-      SCA - Sistema de Controle Ambiental
+      <strong> Sistema de Controle Ambiental </strong>
     </a>
+  </div>
     <ul class="navbar-nav px-3">
       <li>
         <a href="#" class="text-white" (click)="logout()">Sair</a>
@@ -16,8 +19,9 @@
 <!-- Menu mobile responsivo -->
 <div class="menu-responsivo">
   <nav class="navbar navbar-dark bg-dark flex-md-nowrap p-0 border-menu">
+    <img src="assets/img/leaf-solid.png" class="img img-home"/>
     <a class="navbar-brand col-sm-3 col-md-2 mr-0 text-white">
-      SCA - Sistema de Controle Ambiental
+      Sistema de Controle Ambiental
     </a>
     <app-private-menu [responsivo]="true" (emitter)="logout()" style="flex-grow: 1;"></app-private-menu>
   </nav>

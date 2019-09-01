@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
  
-    // apiUrl: 'http://localhost:8080/sca-api-gateway/v1/',
-    apiUrl: 'https://puc-sca-backend2.herokuapp.com/sca-api-gateway/v1/',
+   // apiUrl: 'http://localhost:8080/sca-api-gateway/v1/',
+    apiUrl: 'https://puc-sca-backend2.herokuapp.com/sca-api-gateway/v1/'
 };
 
 /*
