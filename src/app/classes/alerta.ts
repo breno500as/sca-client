@@ -1,7 +1,7 @@
 import { NivelAlertaEnum } from '../enum/nivelAlertaEnum';
 
 export class Alerta {
-    nivelAlerta: NivelAlertaEnum;
+    nivel: NivelAlertaEnum;
     observacoesTecnicasMonitoramento: string;
     parecerMelhoriasSeguranca: string;
 }
