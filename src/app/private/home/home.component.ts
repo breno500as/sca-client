@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthMineradoraService } from 'src/app/core/services/auth-mineradora/auth-mineradora.service';
 
@@ -9,10 +9,11 @@ import { AuthMineradoraService } from 'src/app/core/services/auth-mineradora/aut
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private authService: AuthMineradoraService, private router: Router) { }
+  constructor(private authService: AuthMineradoraService, private router: Router,  private elRef: ElementRef) { }
 
 
   ngOnInit() {
+    this.elRef.nativeElement.ownerDocument.body.style.backgroundColor = '#eee';
   }
 
   logout() {

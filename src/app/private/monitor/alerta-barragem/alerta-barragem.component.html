@@ -15,7 +15,7 @@
                 <label class="required" for="tipoInsumo">Nível alerta</label>
              </div>
              <div class="col-12">
-                <select id="tipoInsumo" name="tipoInsumo"[(ngModel)]="alerta.nivelAlerta" required class="form-control">
+                <select id="tipoInsumo" name="tipoInsumo"[(ngModel)]="alerta.nivel" required class="form-control">
                     <option [ngValue]=""></option>
                     <option *ngFor="let nivelAlerta of keys" [ngValue]="nivelAlerta">{{nivelAlertaEnum[nivelAlerta]}}</option>
                 </select>
