@@ -79,7 +79,7 @@ const privateRoutes: Routes = [
         path: 'rel-insumo-manutencao', component: TodoComponent
       },
       {
-        path: 'rel-insumo-aquisicao', component: TodoComponent
+        path: 'rel-atv-finalizadas', component: TodoComponent
       }
 
     ]
