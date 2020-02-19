@@ -4,10 +4,10 @@
 
 export const environment = {
     production: true,
- 
-    //apiUrl: 'http://localhost:8080/v1/sca-api-gateway/',
+    //apiUrl: 'http://172.16.54.10:8080/v1/sca-api-gateway/'
     apiUrl: 'https://puc-sca-backend.herokuapp.com/v1/sca-api-gateway/'
-};
+    
+   };
 
 /*
  * For easier debugging in development mode, you can import the following file
