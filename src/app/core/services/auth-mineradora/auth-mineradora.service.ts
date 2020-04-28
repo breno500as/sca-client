@@ -27,7 +27,7 @@ export class AuthMineradoraService {
   }
 
   recuperaUsuarios(): Observable<Array<UsuarioMineradora>> {
-    return this.httpClient.get<Array<UsuarioMineradora>>(`${environment.apiUrl}usuarios`);
+    return this.httpClient.get<Array<UsuarioMineradora>>(`${environment.apiUrl}public/usuarios`);
   }
 
   recuperaUsuarioPorId(id: number): Observable<UsuarioMineradora> {
