@@ -1,10 +1,9 @@
-import { Injectable } from '@angular/core';
-import { UsuarioMineradora } from 'src/app/classes/usuarioMineradora';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import {Md5} from 'md5-typescript';
 import * as sha256 from 'sha.js';
+import { UsuarioMineradora } from 'src/app/classes/usuarioMineradora';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
