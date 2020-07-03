@@ -14,13 +14,13 @@
       <div class="login-form-control">
         <div class="input-icon icon-username">
         </div>
-        <input type="email"  [(ngModel)]="usuario.email" style="padding-left: 50px;" name="email" #email="ngModel"  id="inputUser" class="form-control" placeholder="Email" required autofocus>
+        <input type="text"  [(ngModel)]="usuario.username" style="padding-left: 50px;" name="username" #email="ngModel"  id="inputUser" class="form-control" placeholder="Nome" required autofocus>
       </div>
 
       <div class="login-form-control">
         <div class="input-icon icon-password">
         </div>
-        <input type="password" id="inputPassword" style="padding-left: 50px;" [(ngModel)]="usuario.senha" name="senha" #senha="ngModel"  class="form-control" placeholder="Senha" required> 
+        <input type="password" id="inputPassword" style="padding-left: 50px;" [(ngModel)]="usuario.password" name="password" #senha="ngModel"  class="form-control" placeholder="Senha" required> 
       </div>
     
       <button class="btn btn-lg btn-primary btn-block mt-4 mb-3" style="background-color: #006400; border-color: #006400" type="submit" (click)="login()">Login</button>

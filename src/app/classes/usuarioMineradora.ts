@@ -1,8 +1,8 @@
 export class UsuarioMineradora {
     id: number;
-    nome: string;
+    username: string;
     email: string;
-    permissoes: Array<string>;
+    roles: Array<string>;
     token: string;
-    senha: string;
+    password: string;
 }
